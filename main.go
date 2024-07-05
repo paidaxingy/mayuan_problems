@@ -77,11 +77,11 @@ func main() {
 	fmt.Println("BY-CCSU_YZT")
 	fmt.Println("按任意键继续...")
 	fmt.Scanln()
-
+	correct, allnum := 0, 0
 	for totalProblems > 0 {
 		// 打印未答题目数量
-		fmt.Printf("当前还有 %d 题未答。\n", totalProblems)
-
+		fmt.Printf("当前还有 %d 题未答。当前正确率是 %d / %d \n", totalProblems, correct, allnum)
+		allnum++
 		// 随机选择一个未答过的题目
 		problemIndex := randGenerator.Intn(len(problems))
 		selectedProblem := problems[problemIndex]
@@ -116,6 +116,7 @@ func main() {
 			// 从 problems 中删除已经回答正确的题目
 			problems = append(problems[:problemIndex], problems[problemIndex+1:]...)
 			totalProblems--
+			correct++
 		} else {
 			fmt.Printf("回答错误。正确答案是 %s.\n", correctAnswer)
 		}
