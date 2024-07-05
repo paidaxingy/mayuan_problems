@@ -126,6 +126,7 @@ func main() {
 
 	// 完成所有题目后，等待用户按任意键退出
 	fmt.Println("恭喜您，所有题目已答完!")
+	fmt.Printf("您的正确率是 %d / %d \n", correct, allnum)
 	fmt.Println("按任意键退出...")
 	fmt.Scanln()
 }
