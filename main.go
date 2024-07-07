@@ -128,9 +128,9 @@ func main() {
 			correct++
 		} else {
 			fmt.Printf("回答错误。正确答案是 %s.\n", correctAnswer)
-			fmt.Println("按任意键下一题...")
-			fmt.Scanln()
 		}
+		fmt.Println("按任意键下一题...")
+		fmt.Scanln()
 		fmt.Println()
 	}
 
