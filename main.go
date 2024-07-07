@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"math/rand"
+	"os"
+	"os/exec"
 	"strings"
 	"time"
 
@@ -15,6 +17,12 @@ type Problem struct {
 	Options  []string
 	Answer   string
 	Type     string // 存储题目类型
+}
+
+func clearScreen() {
+	cmd := exec.Command("cmd", "/c", "cls")
+	cmd.Stdout = os.Stdout
+	cmd.Run()
 }
 
 // 判断题目类型的函数
@@ -80,6 +88,7 @@ func main() {
 	correct, allnum := 0, 0
 	for totalProblems > 0 {
 		// 打印未答题目数量
+		clearScreen()
 		fmt.Printf("当前还有 %d 题未答。当前正确率是 %d / %d \n", totalProblems, correct, allnum)
 		allnum++
 		// 随机选择一个未答过的题目
